@@ -24,20 +24,25 @@ with page1:
     st.header('Peak Hour of Bike Sharing')
 
     st.subheader("Bike Sharing Trend for All User")
-    fig1, ax1 = plt.subplots(figsize = (20,5))
-    sns.pointplot(data = rental_bike_hour_df , x =np.array(rental_bike_hour_df['hours']) , y =np.array(rental_bike_hour_df['count']), hue = 'day_mapped', ax=ax1)
+    # Convert DataFrame columns to NumPy arrays
+    hours = rental_bike_hour_df['hours'].values
+    count = rental_bike_hour_df['count'].values
+
+    sns.pointplot(x=hours, y=count, hue='day_mapped', data=rental_bike_hour_df, ax=ax1)
     ax1.set(title='Count of bike sharing demand during weekdays and weekends')
     st.pyplot(fig1)
 
     st.subheader("Bike Sharing Trend for Registered User")
+    registered = rental_bike_hour_df['registered'].values
     fig2 , ax2 = plt.subplots(figsize = (20,5))
-    sns.pointplot(data = rental_bike_hour_df , x = np.array(rental_bike_hour_df['hours']), y = np.array(rental_bike_hour_df['registered']), hue = 'day_mapped', ax=ax2)
+    sns.pointplot(data = rental_bike_hour_df , x = hours, y = registered, hue = 'day_mapped', ax=ax2)
     ax2.set(title = 'Count of bike sharing demand during weekdays and weekends: registered users')
     st.pyplot(fig2)
 
     st.subheader("Bike Sharing Trend for Casual User")
+    casual = rental_bike_hour_df['casual'].values
     fig3 , ax3 = plt.subplots(figsize = (20,5))
-    sns.pointplot(data = rental_bike_hour_df , x = np.array(rental_bike_hour_df['hours']), y = np.array(rental_bike_hour_df['casual']), hue = 'day_mapped', ax=ax3)
+    sns.pointplot(data = rental_bike_hour_df , x = hours y = casual, hue = 'day_mapped', ax=ax3)
     ax3.set(title = 'Count of bike sharing demand during weekdays and weekends: casual users')
     st.pyplot(fig3)
 
