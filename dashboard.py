@@ -27,7 +27,8 @@ with page1:
     # Convert DataFrame columns to NumPy arrays
     hours = rental_bike_hour_df['hours'].values
     count = rental_bike_hour_df['count'].values
-
+    
+    fig1, ax1 = plt.subplots(figsize = (20,5))
     sns.pointplot(x=hours, y=count, hue='day_mapped', data=rental_bike_hour_df, ax=ax1)
     ax1.set(title='Count of bike sharing demand during weekdays and weekends')
     st.pyplot(fig1)
