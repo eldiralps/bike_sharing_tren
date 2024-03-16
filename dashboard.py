@@ -42,7 +42,7 @@ with page1:
     st.subheader("Bike Sharing Trend for Casual User")
     casual = rental_bike_hour_df['casual'].values
     fig3 , ax3 = plt.subplots(figsize = (20,5))
-    sns.pointplot(data = rental_bike_hour_df , x = hours y = casual, hue = 'day_mapped', ax=ax3)
+    sns.pointplot(data = rental_bike_hour_df , x = hours, y = casual, hue = 'day_mapped', ax=ax3)
     ax3.set(title = 'Count of bike sharing demand during weekdays and weekends: casual users')
     st.pyplot(fig3)
 
