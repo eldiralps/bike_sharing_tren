@@ -17,8 +17,7 @@ st.title('Dashboard Trend of Bike Sharing during 2011-2012 :sparkles:')
 st.write("Nama          : Eldira Lahanny Permata Sherman")
 st.write("Email         : eldiralps@gmail.com")
 st.write("ID Dicoding   : eldiralps")
-page1, page2, page3 = st.tabs(['Peak Hour of Bike Sharing', "Trend of Bike Sharing based on The Season",
-                              "Time Series Forecasting of Bike Sharing"])
+page1, page2, page3 = st.tabs(['Peak Hour of Bike Sharing', "Trend of Bike Sharing based on The Season", "Time Series Forecasting of Bike Sharing"])
 
 # TAB 1
 with page1:
