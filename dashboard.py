@@ -17,7 +17,8 @@ st.title('Dashboard Trend of Bike Sharing during 2011-2012 :sparkles:')
 st.write("Nama          : Eldira Lahanny Permata Sherman")
 st.write("Email         : eldiralps@gmail.com")
 st.write("ID Dicoding   : eldiralps")
-page1, page2 = st.tabs(['Peak Hour of Bike Sharing', "Trend of Bike Sharing based on The Season"])
+page1, page2, page3 = st.tabs(['Peak Hour of Bike Sharing', "Trend of Bike Sharing based on The Season",
+                              "Time Series Forecasting of Bike Sharing"])
 
 # TAB 1
 with page1:
@@ -45,5 +46,14 @@ with page2:
     st.subheader("Bike Sharing Trend in 2012")
     st.image("2012.jpg", use_column_width=True)
     st.write("Keterangan: warna background putih menandakan musim Spring")
+
+with page3:
+    st.header("Time Series Forecasting of Bike Sharing using EMA Method")
+
+    st.subheader("Time Series Forecasting for alpha = 0.75")
+    st.image("alpha_075.jpg", use_column_width=True)
+
+    st.subheader("Time Series Forecasting for alpha = 0.2")
+    st.image("alpha_02.jpg", use_column_width=True)
 
 st.caption('Copyright (c) Eldira Lahanny Permata Sherman 2024')
